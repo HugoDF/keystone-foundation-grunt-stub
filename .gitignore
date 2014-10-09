@@ -30,5 +30,8 @@ node_modules
 # Ignore bower_components files
 **/bower_components
 
+# Public sass directory is only present for mapping purposes so doesn't need to be tracked
+public/styles/sass/
+
 # Ignore .DS_Store files on OS X
 .DS_Store
