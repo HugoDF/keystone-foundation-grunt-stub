@@ -1,9 +1,11 @@
-<div class="container">
-	<h1>Blog</h1>
-</div>
-<div class="container">
+<div class="text-center">
 	<div class="row">
-		<div class="col-sm-8 col-md-9">
+		<div class="medium-offset-2 medium-6 column">
+			<h1>Blog</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="small-8 medium-9 small-centered column">
 			<h4 class="text-weight-normal">Showing {{ data.posts.results.length}} post.</h4>
 			<div class="blog">
 				{{# each data.posts.results}}
@@ -18,7 +20,7 @@
 				{{/each}}
 			</div>
 		</div>
-		<div class="col-sm-4 col-md-3">
+		<div class="small-4 medium-3 small-centered column">
 			<h2>Categories</h2>
 			<div style="margin-top: 70px;" class="list-group">
 				<a href="/blog" class="active list-group-item">All Categories</a>
