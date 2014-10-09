@@ -69,6 +69,67 @@ module.exports = function(grunt) {
 			}
 		},
 
+		sass: {
+			dev: {
+				options: {
+					style: 'expanded',
+					compass: true
+				},
+				files: {
+					'public/styles/main.css': 'assets/sass/main.scss'
+				}
+			},
+			dist: {
+				options: {
+					style: 'compressed',
+					compass: true
+				},
+				files: {
+					'public/styles/main.min.css': 'assets/sass/main.scss'
+				}
+			}
+		},
+
+		uglify: {
+			dev: {
+				options: {
+					compress: false,
+					mangle: false,
+					beautify: true,
+				},
+				files: {
+					'public/js/main.js': 'assets/js/main.js'
+				},
+			},
+			dist: {
+				options:{
+					compress: true,
+					mangle: true
+				},
+				files: {
+					'public/js/main.min.js': 'assets/js/main.js'
+				},
+			},
+		},
+
+		copy: {
+			dist: {
+				expand: true,
+				cwd: 'assets/bower_components/',
+				src: '**',
+				dest: 'public/js/lib/bower_components/',
+				flatten: false,
+				/*filter: 'isFile',*/
+			},
+			sass: {
+				expand: true,
+				cwd: 'assets/sass/',
+				src: '**',
+				dest: 'public/styles/sass/',
+				flatten: false,
+			}
+		},
+
 		watch: {
 			js: {
 				files: [
@@ -87,8 +148,7 @@ module.exports = function(grunt) {
 			livereload: {
 				files: [
 					'public/styles/**/*.css',
-					'public/styles/**/*.less',
-					'templates/**/*.jade',
+					'templates/**/*.hbs',
 					'node_modules/keystone/templates/**/*.jade'
 				],
 				options: {
@@ -112,9 +172,11 @@ module.exports = function(grunt) {
 			'concurrent:dev'
 		]);
 	});
-	
+
 	grunt.loadNpmTasks('grunt-contrib-compass');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-contrib-copy');
+	
 	grunt.registerTask('server', function () {
 		grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
 		grunt.task.run(['serve:' + target]);

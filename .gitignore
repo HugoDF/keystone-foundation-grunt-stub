@@ -27,5 +27,8 @@ node_modules
 # Ignore .env configuration files
 .env
 
+# Ignore bower_components files
+**/bower_components
+
 # Ignore .DS_Store files on OS X
 .DS_Store
