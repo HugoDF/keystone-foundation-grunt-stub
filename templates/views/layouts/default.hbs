@@ -22,24 +22,22 @@
 	</head>
 	<body>
 		<div id="header">
-			<div class="container">
-				<nav class="top-bar" data-topbar role="navigation">
-					<ul class="title-area">
-						<li class="name">
-							<a href="/" class="navbar-brand">Stub</a>
-						</li>
-						<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-					</ul>
-					<section class="top-bar-section">
-						<div class="medium-5 column medium-centered text-center">
-							<ul class="nav links">
-								{{# each navLinks}}
-									<li {{#ifeq ../section key}}class="active left"{{else}}class="left"{{/ifeq}}>
-										<a href="{{ href }}">{{ label }}</a>
-									</li>
-								{{/each}}
-							</ul>
-						</div>
+			<nav class="top-bar" data-topbar role="navigation">
+				<ul class="title-area">
+					<li class="name">
+						<a href="/" class="navbar-brand">Stub</a>
+					</li>
+					<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+				</ul>
+				<section class="top-bar-section">
+					<div class="column medium-centered text-center">
+						<ul class="nav links">
+							{{# each navLinks}}
+								<li {{#ifeq ../section key}}class="active left"{{else}}class="left"{{/ifeq}}>
+									<a href="{{ href }}">{{ label }}</a>
+								</li>
+							{{/each}}
+						</ul>
 						<ul class="signout right">
 							{{#if user}}
 							<li><a href="/keystone/signout">Sign Out</a></li>
@@ -47,9 +45,9 @@
 							{{!--<li><a href="/keystone/signin">Sign In</a></li>--}}
 							{{/if}}
 						</ul>
-					</section>
-				</nav>
-			</div>
+					</div>
+				</section>
+			</nav>
 		</div>
 		<div id="body">
 			<!--

@@ -156,6 +156,7 @@ module.exports = function(grunt) {
 			livereload: {
 				files: [
 					'public/styles/**/*.css',
+					'assets/sass/*.{scss,sass}',
 					'templates/**/*.hbs',
 					'node_modules/keystone/templates/**/*.jade'
 				],

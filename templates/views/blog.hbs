@@ -1,16 +1,14 @@
 <div class="text-center">
 	<div class="row">
-		<div class="medium-offset-2 medium-6 column">
-			<h1>Blog</h1>
-		</div>
+		<h1>Blog</h1>
 	</div>
 	<div class="row">
 		<div class="small-8 medium-9 small-centered column">
-			<h4 class="text-weight-normal">Showing {{ data.posts.results.length}} post.</h4>
+			<p>Showing {{ data.posts.results.length}} post.</h4>
 			<div class="blog">
 				{{# each data.posts.results}}
 				<div data-ks-editable="{{#if ../user}}{{adminEditableUrl ../../user _id}}{{/if}}" class="post">
-					<h2><a href="{{postUrl slug}}">{{{title}}}</a></h2>
+					<h3><a href="{{postUrl slug}}">{{{title}}}</a></h2>
 					<p class="lead text-muted">{{{categoryList categories prefix="Posted in "}}}
 							{{#if author.name.first}}by {{author.name.first}}{{/if}}
 					</p>
