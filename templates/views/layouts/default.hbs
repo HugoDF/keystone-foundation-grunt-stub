@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Stub</title>
+		<title>{{{title}}}</title>
 		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 		<link href="/styles/main.css" rel="stylesheet">
 		
@@ -25,7 +25,7 @@
 			<nav class="top-bar" data-topbar role="navigation">
 				<ul class="title-area">
 					<li class="name">
-						<a href="/" class="navbar-brand">Stub</a>
+						<a href="/" class="navbar-brand">{{{title}}}</a>
 					</li>
 					<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
 				</ul>
@@ -42,6 +42,7 @@
 							{{#if user}}
 							<li><a href="/keystone/signout">Sign Out</a></li>
 							{{else}}
+							<li class="signin-placeholder"><a href="#">Sign In</a></li>
 							{{!--<li><a href="/keystone/signin">Sign In</a></li>--}}
 							{{/if}}
 						</ul>

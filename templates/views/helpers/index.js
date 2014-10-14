@@ -347,6 +347,17 @@ module.exports = function() {
 		}
 		return new hbs.SafeString(output);
 	};
+
+	_helpers.vardump = function(obj) {
+		console.log('Current context:');
+		console.log(this);
+		console.log('================');
+		if(obj){
+			console.log('Object:');
+			console.log(obj);
+
+		}
+	}
 	
 	return _helpers;
 };

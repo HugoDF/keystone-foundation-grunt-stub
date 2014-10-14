@@ -19184,18 +19184,16 @@ th.hide-for-touch {
     display: table-cell !important;
   }
 }
-.title-area .name {
-  background-image: url("/images/logo.svg");
-  background-size: cover;
-  width: auto;
-}
-
 #body {
   min-height: 80%;
 }
 
 ul.nav.links {
   display: inline-block;
+}
+
+.signin-placeholder {
+  visibility: hidden;
 }
 
 /*# sourceMappingURL=main.css.map */
