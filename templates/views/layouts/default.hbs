@@ -96,10 +96,14 @@
 		<script src="/js/lib/bower_components/foundation/js/foundation/foundation.js"></script>
 		<script src="/js/lib/bower_components/foundation/js/foundation/foundation.topbar.js"></script>
 		{{!-- Custom scripts --}}
+		{{#ifeq env 'production'}}
+		{{!-- Prod --}}
+		<script src="/js/main.min.js"></script>
+		{{else}}
 		{{!-- Dev --}}
 		<script src="/js/main.js"></script>
-		{{!-- Prod --}}
-		{{! <script src="/js/main.min.js"></script> }}
+		{{/ifeq}}
+		
 		{{{isAdminEditorJS user}}}
 	</body>
 </html>

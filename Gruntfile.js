@@ -185,11 +185,14 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-compass');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-copy');
-	//no need to load grunt-contrib-sass but installing it is necessary for compass
+	grunt.loadNpmTasks('grunt-contrib-sass');
 
 	grunt.registerTask('server', function () {
 		grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
 		grunt.task.run(['serve:' + target]);
 	});
+
+	grunt.registerTask('default', ['sass:dev','uglify:dev','copy']);
+	grunt.registerTask('buildProd', ['sass:dist','uglify:dist','copy']);
 
 };
