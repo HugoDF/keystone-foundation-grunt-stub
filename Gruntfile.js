@@ -192,7 +192,7 @@ module.exports = function(grunt) {
 		grunt.task.run(['serve:' + target]);
 	});
 
-	grunt.registerTask('default', ['sass:dev','uglify:dev','copy']);
+	grunt.registerTask('buildDev', ['sass:dev','uglify:dev','copy']);
 	grunt.registerTask('buildProd', ['sass:dist','uglify:dist','copy']);
-
+	grunt.registerTask('default', ['concurrent:dev']);
 };
