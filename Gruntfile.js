@@ -135,6 +135,10 @@ module.exports = function(grunt) {
 		    files: 'assets/sass/*.{scss,sass}',
 		    tasks: ['sass:dev','copy:sass'],
 		  },
+		  components: {
+		  	files: 'assets/bower_components/**',
+		  	tasks: ['copy:dist'],
+		  },
 		  scripts: {
 		  	files: 'assets/js/*.js',
 		  	tasks: 'uglify:dev'
@@ -157,6 +161,7 @@ module.exports = function(grunt) {
 				files: [
 					'public/styles/**/*.css',
 					'assets/sass/*.{scss,sass}',
+					'assets/**',
 					'templates/**/*.hbs',
 					'node_modules/keystone/templates/**/*.jade'
 				],
