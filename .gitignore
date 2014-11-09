@@ -28,7 +28,7 @@ node_modules
 .env
 
 # Ignore bower_components files
-**/bower_components
+assets/bower_components
 
 # Ignore temp sass-cache
 .sass-cache

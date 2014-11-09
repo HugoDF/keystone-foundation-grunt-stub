@@ -197,7 +197,8 @@ module.exports = function(grunt) {
 		grunt.task.run(['serve:' + target]);
 	});
 
-	grunt.registerTask('buildDev', ['sass:dev','uglify:dev','copy']);
-	grunt.registerTask('buildProd', ['sass:dist','uglify:dist','copy']);
+	grunt.registerTask('build:dev', ['sass:dev','uglify:dev','copy']);
+	grunt.registerTask('build:prod', ['sass:dist','uglify:dist','copy']);
+	grunt.registerTask('build', ['build:dev','build:prod']);
 	grunt.registerTask('default', ['concurrent:dev']);
 };
